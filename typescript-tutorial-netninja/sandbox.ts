@@ -63,3 +63,16 @@ hero = {
   age: 2,
   // skills = ["jumping"], also cannot change original structure of object, must have the same properties
 }
+
+// ----------------------------------------------------- //
+
+// EXPLICIT TYPES
+let character: string
+let ageNow: number
+let isLoggedin: boolean
+
+// age = "jigglypuff", cannot be a diff type
+ageNow = 99
+
+let ninjas: string[] // can only be array of strings
+ninjas = [""]

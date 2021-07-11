@@ -47,3 +47,12 @@ hero = {
     belt: "green",
     age: 2
 };
+// ----------------------------------------------------- //
+// EXPLICIT TYPES
+var character;
+var ageNow;
+var isLoggedin;
+// age = "jigglypuff", cannot be a diff type
+ageNow = 99;
+var ninjas; // can only be array of strings
+ninjas = [""];
