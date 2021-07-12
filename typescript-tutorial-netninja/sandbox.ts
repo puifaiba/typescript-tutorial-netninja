@@ -77,9 +77,31 @@ ageNow = 99
 let ninjas: string[] = [] // can only be array of strings and should be initialized as empty string
 ninjas.push("donatello")
 
-//union type - multiple types in an array
+//union type
+// multiple types in an array
 let mixed: (string | number | boolean)[] = []
 mixed.push("willy")
 mixed.push(50)
 mixed.push(false)
 console.log(mixed)
+
+// normal variables can also be union type
+let uid: string | number
+uid = "258985"
+uid = 948343
+
+// objects
+let petOne: object
+petOne = {name: "choppo", age: 4}
+
+let petTwo: {
+  name: string
+  age: number
+  food: string
+}
+// petTwo must only have the properties above to be valid
+petTwo = {
+  name: "hebe",
+  age: 9,
+  food: "mouse",
+}
