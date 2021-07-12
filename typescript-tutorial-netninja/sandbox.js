@@ -56,9 +56,43 @@ var isLoggedin;
 ageNow = 99;
 var ninjas = []; // can only be array of strings and should be initialized as empty string
 ninjas.push("donatello");
-//union type - multiple types in an array
+//union type
+// multiple types in an array
 var mixed = [];
 mixed.push("willy");
 mixed.push(50);
 mixed.push(false);
 console.log(mixed);
+// normal variables can also be union type
+var uid;
+uid = "258985";
+uid = 948343;
+// objects
+var petOne;
+petOne = { name: "choppo", age: 4 };
+var petTwo;
+// petTwo must only have the properties above to be valid
+petTwo = {
+    name: "hebe",
+    age: 9,
+    food: "mouse"
+};
+// ----------------------------------------------------- //
+// DYNAMIC (ANY) TYPES
+var weight = 599; //can initialize with value
+weight = true;
+console.log(weight);
+weight = "nunya biz";
+console.log(weight);
+weight = { name: "yo mama" };
+console.log(weight);
+// kind of reverts ts back to js, no errors during development about types
+// try not to use any type
+var anyArr = [];
+anyArr.push(8747);
+anyArr.push("anyone");
+var anyNinja;
+anyNinja = { name: "leonardo", age: 18 };
+console.log(anyNinja);
+anyNinja = { name: 18, age: "leonardo" };
+console.log(anyNinja);

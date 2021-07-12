@@ -105,3 +105,26 @@ petTwo = {
   age: 9,
   food: "mouse",
 }
+
+// ----------------------------------------------------- //
+
+// DYNAMIC (ANY) TYPES
+let weight: any = 599 //can initialize with value
+weight = true
+console.log(weight)
+weight = "nunya biz"
+console.log(weight)
+weight = {name: "yo mama"}
+console.log(weight)
+// kind of reverts ts back to js, no errors during development about types
+// try not to use any type
+
+let anyArr: any[] = []
+anyArr.push(8747)
+anyArr.push("anyone")
+
+let anyNinja: {name: any; age: any}
+anyNinja = {name: "leonardo", age: 18}
+console.log(anyNinja)
+anyNinja = {name: 18, age: "leonardo"}
+console.log(anyNinja)
