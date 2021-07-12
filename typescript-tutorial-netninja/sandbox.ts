@@ -74,5 +74,12 @@ let isLoggedin: boolean
 // age = "jigglypuff", cannot be a diff type
 ageNow = 99
 
-let ninjas: string[] // can only be array of strings
-ninjas = [""]
+let ninjas: string[] = [] // can only be array of strings and should be initialized as empty string
+ninjas.push("donatello")
+
+//union type - multiple types in an array
+let mixed: (string | number | boolean)[] = []
+mixed.push("willy")
+mixed.push(50)
+mixed.push(false)
+console.log(mixed)
