@@ -98,3 +98,32 @@ anyNinja = { name: "leonardo", age: 18 };
 console.log(anyNinja);
 anyNinja = { name: 18, age: "leonardo" };
 console.log(anyNinja);
+// ----------------------------------------------------- //
+// FUNCTIONS
+let greet = () => {
+    console.log("hello, world");
+};
+// greet is type function
+let sayHi;
+sayHi = () => {
+    console.log("HI!");
+};
+const add = (a, b, c) => {
+    console.log(a + b);
+    console.log(c); // undefined if we don't set a default value
+};
+add(2434, 943);
+// the ? denotes optional argument
+// we can also set default value by saying c: number | string = 10
+// returns void when there is no return statement
+const minus = (a, b) => {
+    return a - b;
+};
+let result = minus(343, 32);
+// result infers the type from the return value of minus, which is a number
+// result = "some number", we cannot change the type to a string
+// to explicitly state the type of the return value
+const mult = (a, b) => {
+    return a * b;
+};
+// usu not necessary but useful for longer functions
