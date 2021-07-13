@@ -178,3 +178,31 @@ const logDetails = (uid: stringOrNum, item: string) => {
 const greeting = (user: objWithName) => {
   console.log(`${user.name} says Hi!`)
 }
+
+// ----------------------------------------------------- //
+// FUNCTION SIGNATURE
+
+// let greet: Function
+// () => void
+// this function takes no arguments and returns void
+// the function must match the signature
+
+let greetOne: (a: string, b: string) => void
+greetOne = (name: string, greeting: string) => {
+  console.log(`${name} says ${greeting}`)
+}
+
+let calc: (x: number, y: number, z: string) => number
+calc = (numOne: number, numTwo: number, action: string): number => {
+  if (action === "add") {
+    return numOne + numTwo
+  } else {
+    return numOne - numTwo
+  }
+}
+
+let loginDetails: (obj: {name: string; age: number}) => void
+type person = {name: string; age: number}
+loginDetails = (ninja: person) => {
+  console.log(`${ninja.name} is ${ninja.age} years old`)
+}
