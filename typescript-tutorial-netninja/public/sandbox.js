@@ -126,4 +126,9 @@ let result = minus(343, 32);
 const mult = (a, b) => {
     return a * b;
 };
-// usu not necessary but useful for longer functions
+const logDetails = (uid, item) => {
+    console.log(`${item} has a uid of ${uid}`);
+};
+const greeting = (user) => {
+    console.log(`${user.name} says Hi!`);
+};
