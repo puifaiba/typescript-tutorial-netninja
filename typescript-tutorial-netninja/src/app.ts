@@ -41,4 +41,13 @@ class Invoice {
     this.details = d
     this.amount = a
   }
+
+  format() {
+    return `${this.client} owes $${this.amount} for ${this.details}`
+  }
 }
+
+const invOne = new Invoice("pikachu", "work on the pikamobile", 3000)
+const invTwo = new Invoice("charmander", "work on the grill charmaster", 700)
+
+console.log(invOne, invTwo)
