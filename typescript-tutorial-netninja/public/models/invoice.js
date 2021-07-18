@@ -23,3 +23,10 @@ const me = {
     },
 };
 console.log(me);
+// we can declare another variable to be IsPerson
+let someone;
+// we can use it as a parameter in a function
+const greetPerson = (person) => {
+    console.log("Hey, ", person.name);
+};
+greetPerson(me);

@@ -21,7 +21,7 @@ export class Invoice {
 // ----------------------------------------------------- //
 // INTERFACES
 // defines the specifications/structure of a class or object,
-// describes the data shape (similar to types)
+// describes the data shape (similar to creating a type)
 
 interface IsPerson {
   name: string
@@ -44,3 +44,12 @@ const me: IsPerson = {
 }
 
 console.log(me)
+
+// we can declare another variable to be IsPerson
+let someone: IsPerson
+
+// we can use it as a parameter in a function
+const greetPerson = (person: IsPerson) => {
+  console.log("Hey, ", person.name)
+}
+greetPerson(me)
