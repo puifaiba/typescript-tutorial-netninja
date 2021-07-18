@@ -10,7 +10,16 @@ export class Invoice {
         return `${this.client} owes $${this.amount} for ${this.details}`;
     }
 }
-// drawbacks to using module system
-// 1. only compatible with newer browsers
-// 2. doesn't bundle code into a single file, it loads as separate files with separate network requests
-// (can be fixed by using webpack)
+const me = {
+    // the structure must match the interface
+    name: "rasputin",
+    age: 20,
+    speak(text) {
+        console.log(text);
+    },
+    spend(amount) {
+        console.log("I spent", amount);
+        return amount;
+    },
+};
+console.log(me);
