@@ -42,11 +42,19 @@ var Invoice = /** @class */ (function () {
     };
     return Invoice;
 }());
+// if we are using the access modifier, there is a shorthand way to initialize the values
+// class Invoice {
+//   constructor(
+//     readonly client: string,
+//     private details: string,
+//     public amount: number,
+//   ){}
+// }
 var invOne = new Invoice("pikachu", "work on the pikamobile", 3000);
 var invTwo = new Invoice("charmander", "work on the charmaster grill", 700);
 console.log(invOne, invTwo);
-// can change property of class object
-invOne.client = "wartortle";
+// can change property of class object if public
+// invOne.client = "wartortle"
 invTwo.amount = 400;
 // can make an array with only this class objects
 var invoices = [];
