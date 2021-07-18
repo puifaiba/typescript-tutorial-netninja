@@ -1,3 +1,5 @@
+import {Invoice} from "./models/invoice.js"
+
 const anchor = document.querySelector("a")!
 // anchor.href gives an error saying anchor might be null
 // using a bang at the end tells ts that it does exist
@@ -29,39 +31,39 @@ form.addEventListener("submit", (e: Event) => {
   console.log(type.value, tofrom.value, details.value, amount.valueAsNumber)
 })
 
-// ----------------------------------------------------- //
-// CLASSES
+// // ----------------------------------------------------- //
+// // CLASSES
 
-class Invoice {
-  readonly client: string
-  private details: string
-  public amount: number
-  // public is the access modifier, properties are public by default,
-  // can read and change value inside and outside class
-  // private properties cannot be accessed directly outside of the class,
-  // can only read and change inside the class
-  // readonly can be read outside and inside the class but can't be changed
-
-  // need to initialize the values
-  constructor(c: string, d: string, a: number) {
-    this.client = c
-    this.details = d
-    this.amount = a
-  }
-  // create method for this class
-  format() {
-    return `${this.client} owes $${this.amount} for ${this.details}`
-  }
-}
-
-// if we are using the access modifier, there is a shorthand way to initialize the values
 // class Invoice {
-//   constructor(
-//     readonly client: string,
-//     private details: string,
-//     public amount: number,
-//   ){}
+//   readonly client: string
+//   private details: string
+//   public amount: number
+//   // public is the access modifier, properties are public by default,
+//   // can read and change value inside and outside class
+//   // private properties cannot be accessed directly outside of the class,
+//   // can only read and change inside the class
+//   // readonly can be read outside and inside the class but can't be changed
+
+//   // need to initialize the values
+//   constructor(c: string, d: string, a: number) {
+//     this.client = c
+//     this.details = d
+//     this.amount = a
+//   }
+//   // create method for this class
+//   format() {
+//     return `${this.client} owes $${this.amount} for ${this.details}`
+//   }
 // }
+
+// // if we are using the access modifier, there is a shorthand way to initialize the values
+// // class Invoice {
+// //   constructor(
+// //     readonly client: string,
+// //     private details: string,
+// //     public amount: number,
+// //   ){}
+// // }
 
 const invOne = new Invoice("pikachu", "work on the pikamobile", 3000)
 const invTwo = new Invoice("charmander", "work on the charmaster grill", 700)
