@@ -82,5 +82,3 @@ console.log(invoices)
 invoices.forEach((i) => {
   console.log(i.client, i.amount, i.format())
 })
-
-// class properties are public by default
