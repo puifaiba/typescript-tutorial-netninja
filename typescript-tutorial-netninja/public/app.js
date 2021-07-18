@@ -25,16 +25,32 @@ form.addEventListener("submit", function (e) {
 // ----------------------------------------------------- //
 // CLASSES
 var Invoice = /** @class */ (function () {
+    // public is the access modifier, properties are public by default
+    // need to initialize the values
     function Invoice(c, d, a) {
         this.client = c;
         this.details = d;
         this.amount = a;
     }
+    // create method for this class
     Invoice.prototype.format = function () {
         return this.client + " owes $" + this.amount + " for " + this.details;
     };
     return Invoice;
 }());
 var invOne = new Invoice("pikachu", "work on the pikamobile", 3000);
-var invTwo = new Invoice("charmander", "work on the grill charmaster", 700);
+var invTwo = new Invoice("charmander", "work on the charmaster grill", 700);
 console.log(invOne, invTwo);
+// can change property of class object
+invOne.client = "wartortle";
+invTwo.amount = 400;
+// can make an array with only this class objects
+var invoices = [];
+invoices.push(invOne, invTwo);
+console.log(invoices);
+// let formatted = invOne.format()
+// console.log(formatted)
+invoices.forEach(function (i) {
+    console.log(i.client, i.details, i.amount, i.format());
+});
+// class properties are public by default
