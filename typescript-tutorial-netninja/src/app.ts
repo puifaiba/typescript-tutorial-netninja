@@ -1,4 +1,6 @@
-import {Invoice} from "./models/invoice.js"
+import {Invoice} from "./models/Invoice"
+import {Payment} from "./models/Payment"
+import {HasFormatter} from "./interfaces/HasFormatter"
 
 const anchor = document.querySelector("a")!
 // anchor.href gives an error saying anchor might be null
@@ -28,7 +30,14 @@ const amount = document.querySelector("#amount") as HTMLInputElement
 form.addEventListener("submit", (e: Event) => {
   e.preventDefault()
 
-  console.log(type.value, tofrom.value, details.value, amount.valueAsNumber)
+  let doc: HasFormatter
+  if (type.value === "invoice") {
+    doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber)
+  } else {
+    doc = new Payment(tofrom.value, details.value, amount.valueAsNumber)
+  }
+
+  console.log(doc)
 })
 
 // // ----------------------------------------------------- //
@@ -64,6 +73,17 @@ form.addEventListener("submit", (e: Event) => {
 // //     public amount: number,
 // //   ){}
 // // }
+
+let docOne: HasFormatter
+let docTwo: HasFormatter
+
+docOne = new Invoice("toad", "mobile", 450)
+docTwo = new Payment("toadette", "banana boat", 300)
+
+let docs: HasFormatter[] = []
+docs.push(docOne, docTwo)
+// docs can contain objects from different classes as long as they implement HasFormatter
+console.log(docs)
 
 const invOne = new Invoice("pikachu", "work on the pikamobile", 3000)
 const invTwo = new Invoice("charmander", "work on the charmaster grill", 700)
