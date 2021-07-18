@@ -31,23 +31,47 @@ form.addEventListener("submit", (e: Event) => {
 
 // ----------------------------------------------------- //
 // CLASSES
-class Invoice {
-  client: string
-  details: string
-  amount: number
 
+class Invoice {
+  readonly client: string
+  private details: string
+  public amount: number
+  // public is the access modifier, properties are public by default,
+  // can read and change value inside and outside class
+  // private properties cannot be accessed directly outside of the class,
+  // can only read and change inside the class
+  // readonly can be read outside and inside the class but can't be changed
+
+  // need to initialize the values
   constructor(c: string, d: string, a: number) {
     this.client = c
     this.details = d
     this.amount = a
   }
-
+  // create method for this class
   format() {
     return `${this.client} owes $${this.amount} for ${this.details}`
   }
 }
 
 const invOne = new Invoice("pikachu", "work on the pikamobile", 3000)
-const invTwo = new Invoice("charmander", "work on the grill charmaster", 700)
+const invTwo = new Invoice("charmander", "work on the charmaster grill", 700)
 
 console.log(invOne, invTwo)
+
+// can change property of class object
+invOne.client = "wartortle"
+invTwo.amount = 400
+// can make an array with only this class objects
+let invoices: Invoice[] = []
+invoices.push(invOne, invTwo)
+console.log(invoices)
+
+// let formatted = invOne.format()
+// console.log(formatted)
+
+invoices.forEach((i) => {
+  console.log(i.client, i.amount, i.format())
+})
+
+// class properties are public by default

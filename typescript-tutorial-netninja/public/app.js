@@ -25,7 +25,11 @@ form.addEventListener("submit", function (e) {
 // ----------------------------------------------------- //
 // CLASSES
 var Invoice = /** @class */ (function () {
-    // public is the access modifier, properties are public by default
+    // public is the access modifier, properties are public by default,
+    // can read and change value inside and outside class
+    // private properties cannot be accessed directly outside of the class,
+    // can only read and change inside the class
+    // readonly can be read outside and inside the class but can't be changed
     // need to initialize the values
     function Invoice(c, d, a) {
         this.client = c;
@@ -51,6 +55,6 @@ console.log(invoices);
 // let formatted = invOne.format()
 // console.log(formatted)
 invoices.forEach(function (i) {
-    console.log(i.client, i.details, i.amount, i.format());
+    console.log(i.client, i.amount, i.format());
 });
 // class properties are public by default
