@@ -124,3 +124,29 @@ const addUID = <T extends object>(obj: T) => {
 let newDoc = addUID({name: "Jimmy", age: 4})
 
 console.log(newDoc.name) // we are unable to get the individual properties without using the generic
+
+// using generics with interfaces
+interface Resource<T> {
+  // we are passing in T is the data type
+  uid: number
+  resourceName: string
+  data: T // we want data to be flexible/generic
+}
+
+const docThree: Resource<string> = {
+  uid: 1,
+  resourceName: "dog",
+  data: "Choppo",
+}
+
+const docFour: Resource<object> = {
+  uid: 2,
+  resourceName: "dog",
+  data: {name: "Choppo"},
+}
+
+const docFive: Resource<string[]> = {
+  uid: 3,
+  resourceName: "shoppingList",
+  data: ["bread", "milk"],
+}

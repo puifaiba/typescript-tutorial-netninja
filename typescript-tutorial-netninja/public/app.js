@@ -98,3 +98,18 @@ const addUID = (obj) => {
 };
 let newDoc = addUID({ name: "Jimmy", age: 4 });
 console.log(newDoc.name); // we are unable to get the individual properties without using the generic
+const docThree = {
+    uid: 1,
+    resourceName: "dog",
+    data: "Choppo",
+};
+const docFour = {
+    uid: 2,
+    resourceName: "dog",
+    data: { name: "Choppo" },
+};
+const docFive = {
+    uid: 3,
+    resourceName: "shoppingList",
+    data: ["bread", "milk"],
+};
