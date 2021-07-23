@@ -86,3 +86,11 @@ console.log(invoices)
 invoices.forEach((i) => {
   console.log(i.client, i.amount, i.format())
 })
+// ----------------------------------------------------- //
+// GENERICS - blocks of reusable code that can be used with different types
+const addUID = (obj) => {
+  let uid = Math.floor(Math.random() * 100)
+  return Object.assign(Object.assign({}, obj), {uid})
+}
+let newDoc = addUID({name: "Jimmy", age: 4})
+console.log(newDoc)
