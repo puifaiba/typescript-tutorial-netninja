@@ -113,11 +113,14 @@ invoices.forEach((i) => {
 // ----------------------------------------------------- //
 // GENERICS - blocks of reusable code that can be used with different types
 
-const addUID = (obj: object) => {
+// const addUID = (obj: object) => {
+const addUID = <T extends object>(obj: T) => {
+  // we add a generic in front in order to capture the properties of the object
+  // can also be more specific e.g. <T extends {name: string}>
   let uid = Math.floor(Math.random() * 100)
   return {...obj, uid}
 }
 
 let newDoc = addUID({name: "Jimmy", age: 4})
 
-console.log(newDoc)
+console.log(newDoc.name) // we are unable to get the individual properties without using the generic
