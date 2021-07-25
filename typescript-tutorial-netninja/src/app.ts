@@ -174,3 +174,18 @@ const docSix: List<object> = {
 }
 
 console.log(docSix)
+
+// ----------------------------------------------------- //
+// TUPLES - similar to arrays but position is fixed
+
+let arr = ["Choppo", 4, true]
+arr[0] = false
+arr[1] = "Polly"
+arr = [20, "no", false]
+// arrays are flexible and can change values and types in any position
+
+let tup: [string, number, boolean] = ["Choppo", 4, true]
+// tup[0] = false, unable to change as the type has been specified as a string
+
+let student: [string, number]
+student = ["Michelangelo", 330004]
