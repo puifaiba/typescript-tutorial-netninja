@@ -1,6 +1,6 @@
-import { Invoice } from "./models/Invoice";
-import { Payment } from "./models/Payment";
-import { ListTemplate } from "./models/ListTemplate";
+import { Invoice } from "./models/Invoice.js";
+import { Payment } from "./models/Payment.js";
+import { ListTemplate } from "./models/ListTemplate.js";
 const anchor = document.querySelector("a");
 // anchor.href gives an error saying anchor might be null
 // using a bang at the end tells ts that it does exist
@@ -113,3 +113,19 @@ const docFive = {
     resourceName: "shoppingList",
     data: ["bread", "milk"],
 };
+// ----------------------------------------------------- //
+// ENUMS
+var ResourceType;
+(function (ResourceType) {
+    ResourceType[ResourceType["BOOK"] = 0] = "BOOK";
+    ResourceType[ResourceType["AUTHOR"] = 1] = "AUTHOR";
+    ResourceType[ResourceType["FILM"] = 2] = "FILM";
+    ResourceType[ResourceType["DIRECTOR"] = 3] = "DIRECTOR";
+    ResourceType[ResourceType["PERSON"] = 4] = "PERSON";
+})(ResourceType || (ResourceType = {}));
+const docSix = {
+    uid: 4,
+    resourceType: ResourceType.BOOK,
+    data: { title: "where the red fern grows" },
+};
+console.log(docSix);

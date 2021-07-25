@@ -1,7 +1,7 @@
-import {Invoice} from "./models/Invoice"
-import {Payment} from "./models/Payment"
-import {HasFormatter} from "./interfaces/HasFormatter"
-import {ListTemplate} from "./models/ListTemplate"
+import {Invoice} from "./models/Invoice.js"
+import {Payment} from "./models/Payment.js"
+import {HasFormatter} from "./interfaces/HasFormatter.js"
+import {ListTemplate} from "./models/ListTemplate.js"
 
 const anchor = document.querySelector("a")!
 // anchor.href gives an error saying anchor might be null
@@ -150,3 +150,27 @@ const docFive: Resource<string[]> = {
   resourceName: "shoppingList",
   data: ["bread", "milk"],
 }
+
+// ----------------------------------------------------- //
+// ENUMS
+enum ResourceType {
+  BOOK,
+  AUTHOR,
+  FILM,
+  DIRECTOR,
+  PERSON,
+}
+
+interface List<T> {
+  uid: number
+  resourceType: ResourceType
+  data: T
+}
+
+const docSix: List<object> = {
+  uid: 4,
+  resourceType: ResourceType.BOOK,
+  data: {title: "where the red fern grows"},
+}
+
+console.log(docSix)
